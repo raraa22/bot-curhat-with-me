@@ -1,9 +1,12 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
+import os
 from groq import Groq
 
 # Inisialisasi Groq
-client = Groq(api_key=GROQ_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+client = Groq(api_key=GROQ_API_KEY)
 
 # Simpan riwayat chat user
 user_history = {}
